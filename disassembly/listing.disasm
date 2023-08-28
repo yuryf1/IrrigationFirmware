@@ -1,0 +1,48 @@
+Disassembly Listing for GeneralFirmware
+Generated From:
+/home/yury/MPLABXProjects/dist/default/debug/MPLABXProjects.debug.elf
+24.08.2023 18:06:50
+
+---  /home/yury/MPLABXProjects/main.c  ------------------------------------------------------------------
+1:                 #pragma config FNOSC = FRCPLL // Oscillator Mode (Internal Fast RC (FRC) w/ PLL)
+2:                 #pragma config FWDTEN = OFF   // Watchdog Disable
+3:                 
+4:                 //#pragma config WDTE = OFF
+5:                 //#pragma config LVP = ON
+6:                 
+7:                 #include "xc.h"         //mcu registers
+8:                 //#include <libpic30.h>   //delay
+9:                 
+10:                
+11:                const unsigned long cyclesInOneSecond = 8000000UL;
+12:                
+13:                int main(void) {
+14:                    
+15:                    //OSCCONbits.NOSC = 6;
+16:                    //Try RE3, RE4, RE5 to digital output
+17:                    TRISE = 0b11000111;
+0002D2  200C70     MOV #0xC7, W0
+0002D4  8816C0     MOV W0, TRISE
+18:                    LATE = 0b11000111;
+0002D6  8816E0     MOV W0, LATE
+19:                
+20:                 
+21:                    
+22:                //    __delay32(cyclesInOneSecond);
+23:                //    LATEbits.LATE5 = 1;
+24:                //    LATEbits.LATE6 = 1;
+25:                //    LATEbits.LATE7 = 1;
+26:                //    
+27:                //    while(1)
+28:                //    {
+29:                //    _LATE6 = 1 - _LATE6;
+30:                //    __delay32(cyclesInOneSecond);
+31:                //     //__delay_ms(2000);
+32:                //    }
+33:                
+34:                    
+35:                    return 0;
+36:                }
+0002D8  EB0000     CLR W0
+0002DA  060000     RETURN
+37:                
