@@ -1,2 +1,2 @@
-# IrrigationFirmware
-Firmware to work with ThirdIrrigation/FourthIrrigation for Agsense Valley Field Commander.
+# Getting Started with Microchip dsPIC33
+Simple example for blinking MCU pin/ 
